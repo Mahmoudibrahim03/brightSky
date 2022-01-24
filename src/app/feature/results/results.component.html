@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <div class="title text-center text-capitalize my-5">
+        <h1 class="results">Results of trips</h1>
+      </div>
+
+      <div class="results text-center d-flex justify-content-around align-items-center mb-5"
+           *ngFor="let trip of resultInfo?.time;let i = index"
+           (click)="tripReservation(i)">
+
+        <div class="info d-flex align-items-stretch flex-column">
+
+          <div class="demonstration d-flex">
+            <p class="key text-capitalize ">demonstration</p>
+            <p class="value">{{this.resultInfo!.demonstration}}</p>
+          </div>
+
+          <div class="date d-flex">
+            <p class="key text-capitalize ">Date</p>
+            <p class="value">{{trip.date}}</p>
+          </div>
+        </div>
+
+        <div class="search d-flex align-items-center justify-content-center">
+
+          <div class="from">
+            <p>{{this.resultInfo!.from}}</p>
+            <p>{{trip.departureTime}}</p>
+          </div>
+
+          <div class="path text-center mx-3">
+            <h2>To</h2>
+          </div>
+
+          <div class="to">
+            <p>{{this.resultInfo!.to}}</p>
+            <p>{{trip.arrivalTime}}</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="notFound text-center" *ngIf="!resultInfo">
+        <p>Sorry Not Found Results ... search again</p>
+        <a routerLink="../search">Search...</a>
+        <img src="assets/images/notFound.png" class="w-100" alt="">
+      </div>
+    </div>
+  </div>
+</div>

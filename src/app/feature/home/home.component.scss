@@ -1,0 +1,39 @@
+@import "../../../themes/theme.scss";
+
+.homePage {
+  height: 100vh !important;
+  //background-color: $PRIMARY-Blue-color;
+
+  .content {
+    h1 {
+      font-size: $XXL-Head-size;
+      //color: $Warning-Yellow-color;
+      font-weight: $BOLDEST-weight;
+    }
+
+    .takeOff {
+      button {
+        width: 230px;
+        height: 230px;
+        border-radius: $FULL-radius;
+        padding: 20px;
+        border: 4px solid;
+        //background-color: transparent;
+        //color: $Warning-Yellow-color;
+        font-size: $M-Head-size;
+        font-weight: $BOLDEST-weight;
+        transition: $MAIN-transition;
+        cursor: pointer;
+        margin-top: 90px;
+
+        &:hover {
+          //background-color: $Warning-Yellow-color;
+          //color: #fff;
+          box-shadow: $MAIN-shadow;
+          transition: $MAIN-transition;
+          transform: scale(1.12);
+        }
+      }
+    }
+  }
+}

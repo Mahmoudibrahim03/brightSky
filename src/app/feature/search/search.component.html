@@ -1,0 +1,115 @@
+<div class="container search">
+  <div class="row h-100">
+    <div class="col-12  d-flex align-items-center justify-content-center">
+      <div class="searchTrips  d-flex flex-wrap">
+        <h1 class=" text-center w-100">Search Flight</h1>
+        <form class="form w-100" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <!--            <div class="row">-->
+            <!--              <div class="col">-->
+            <!--                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"-->
+            <!--                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"-->
+            <!--                     viewBox="-130 395.4 334.9 50.5" style="enable-background:new -130 395.4 334.9 50.5;"-->
+            <!--                     xml:space="preserve">-->
+            <!--                  <path id="Path_7" class="st0" d="M-129.6,433.3c0,0,181.5-90.4,333.9,11.7"/>-->
+            <!--                </svg>-->
+            <!--              </div>-->
+            <!--            </div>-->
+            <div class="row">
+              <div class="col mb-3">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                  <div class="position-relative">
+                    <label for="FromLocation" class="form-label">From</label>
+                    <input type="text"
+                           class="form-control"
+                           id="FromLocation"
+                           aria-describedby="fromLocation"
+                           autocomplete="off"
+                           placeholder="From location"
+                           name="fromLocation"
+                           (keyup)="filterList('from')"
+                           formControlName="fromSearch">
+                    <div id="ToHelp validation" class="form-text text-danger"
+                         *ngIf="this.searchForm.get(['fromSearch'])?.touched && this.searchForm.get(['fromSearch'])?.errors!['required']">
+                      *input location is required
+                    </div>
+                    <div id="ToHelp validation" class="form-text text-danger"
+                         *ngIf="this.searchForm.get(['fromSearch'])?.touched && !this.searchForm.get(['fromSearch'])?.errors!['validInputChoice']">
+                      *input location not exist
+                    </div>
+                    <div id="fromHelp" class="form-text">Select the location that you will fly from.</div>
+                    <div class="listOfCountries position-absolute"
+                         #fromList
+                         *ngIf="filteredListFromCountries.length && (this.searchForm.get(['fromSearch'])?.value)?.length">
+                      <ul>
+                        <li
+                          *ngFor="let city of filteredListFromCountries;index as i"
+                          (click)="getSelectedItem('from',i)">
+                          {{city.name}}
+
+                          <img [src]="city.image"
+                               alt="country">
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col mb-3">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                  <div class="position-relative">
+                    <label for="ToLocation" class="form-label">To</label>
+                    <input Sname="toLocation"
+                           (keyup)="filterList('to')"
+                           type="text"
+                           class="form-control"
+                           autocomplete="off"
+                           id="ToLocation"
+                           placeholder="To location"
+                           formControlName="toSearch">
+                    <div id="ToHelp validation" class="form-text text-danger"
+                         *ngIf="this.searchForm.get(['toSearch'])?.touched && this.searchForm.get(['toSearch'])?.errors!['required']">
+                      *input location is required
+                    </div>
+                    <div id="ToHelp validation" class="form-text text-danger"
+                         *ngIf="this.searchForm.get(['toSearch'])?.touched && !this.searchForm.get(['toSearch'])?.errors!['validInputChoice']">
+                      *input location not exist
+                    </div>
+                    <div id="ToHelp" class="form-text">Select the location that you will fly to.</div>
+                    <div class="listOfCountries position-absolute"
+                         #toList
+                         *ngIf="filteredListToCountries.length &&
+                        (this.searchForm.get(['toSearch'])?.value)?.length">
+                      <ul>
+                        <li (click)="getSelectedItem('to',i)"
+                            *ngFor="let city of filteredListToCountries;index as i">
+                          {{city.name}}
+                          <img [src]="city.image"
+                               alt="">
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="ToHelp formValidation" class="form-text text-danger"
+                 *ngIf="this.searchForm.touched && this.searchForm.errors!['sameValueErr']">
+              *inputs can not be be the same location
+            </div>
+
+            <button class="d-flex justify-content-around align-items-center"
+                    [disabled]="this.searchForm.errors!['sameValueErr'] ||
+                     !this.searchForm.get(['toSearch'])?.errors!['validInputChoice']||
+                     !this.searchForm.get(['fromSearch'])?.errors!['validInputChoice']||
+                     this.searchForm.get(['toSearch'])?.errors!['required']||
+                     this.searchForm.get(['fromSearch'])?.errors!['required']"
+                    type="submit">Navigate
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

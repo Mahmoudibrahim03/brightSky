@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row homePage">
+    <div class="col d-flex align-items-center justify-content-center">
+      <div class="content d-flex justify-content-center justify-content-center flex-column">
+        <ngx-typed-js (completed)="completeAutoType()" [typeSpeed]="90" [smartBackspace]=true
+                      [strings]="['start exploring luxury trips']" [showCursor]=false>
+          <h1 class="typing d-inline-block"></h1>
+        </ngx-typed-js>
+        <div class="takeOff d-block m-auto">
+          <button [routerLink]="['/search']" *ngIf="redirect"> TAKE OFF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

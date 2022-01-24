@@ -1,0 +1,117 @@
+@import "../../../themes/theme.scss";
+
+.search {
+  height: 100vh;
+
+  .searchTrips {
+    //height: 100%;
+
+    h1 {
+      font-size: $XL-Head-size;
+      font-weight: $BOLDEST-weight;
+      margin-bottom: 70px;
+    }
+
+    .form {
+      font-size: $L-Body-size;
+      font-weight: $BOLDEST-weight;
+
+      label {
+        font-size: 1.5rem;
+      }
+
+      input {
+        border-radius: 0;
+        padding: 10px 15px;
+        transition: $MAIN-transition;
+        border: $MAIN-border;
+        max-width: 240px;
+
+        &:hover {
+          box-shadow: $MAIN-shadow;
+          transition: $MAIN-transition;
+        }
+
+        &:focus {
+          border-color: #333;
+          box-shadow: $MAIN-shadow;
+        }
+      }
+
+      .form-text {
+        font-weight: $SEMILIGHT-weight;
+      }
+
+      button {
+        font-size: $L-Body-size;
+        font-weight: $BOLDEST-weight;
+        border: $MAIN-border;
+        padding: 11px;
+        width: 145px;
+        display: block;
+        margin: 25px auto 0 auto;
+        transition: $MAIN-transition;
+
+        &:hover, &:focus {
+          box-shadow: $MAIN-shadow;
+          transition: $MAIN-transition;
+
+        }
+
+        img {
+          width: 30px;
+        }
+      }
+
+      svg {
+        stroke-dasharray: 200;
+        width: 100%;
+        animation: dash 5s ease-in-out infinite;
+      }
+
+      svg .st0 {
+        fill: none;
+        stroke: #333;
+        stroke-width: 2;
+        stroke-dasharray: 400;
+      }
+
+      @keyframes dash {
+        from {
+          stroke-dashoffset: 895;
+        }
+      }
+    }
+
+    .listOfCountries {
+      width: 100%;
+
+      ul {
+        margin: 0;
+        box-shadow: $MAIN-shadow;
+        max-height: 300px;
+        overflow-y: scroll;
+        border: $MAIN-border;
+        padding: 0;
+
+        li {
+          padding: 10px 5px;
+          display: flex;
+          justify-content: space-between;
+          list-style: none;
+          box-shadow: none;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #f6f6f6
+          }
+
+          img {
+            width: 30px;
+          }
+        }
+      }
+    }
+
+  }
+}

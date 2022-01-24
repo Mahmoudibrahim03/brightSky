@@ -1,0 +1,64 @@
+@import "../../../themes/theme.scss";
+
+.container {
+  p {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .title {
+    h1 {
+      font-size: $XL-Head-size;
+      font-weight: $BOLDEST-weight;
+      margin-bottom: 70px;
+    }
+  }
+
+  .results {
+    cursor: pointer;
+    padding: 20px 0;
+
+    &:hover {
+      background-color: #eee;
+    }
+
+    .info {
+      font-size: $L-Body-size;
+
+      .key {
+        min-width: 150px;
+        font-weight: $BOLDEST-weight;
+      }
+    }
+
+    .search {
+      .path {
+        font-weight: $SEMILIGHT-weight;
+
+        h2 {
+          font-weight: $BOLDEST-weight;
+        }
+      }
+    }
+  }
+
+  .notFound {
+    p {
+      font-size: $L-Head-size;
+      font-weight: $LIGHT-weight;
+    }
+
+    a {
+      color: #333;
+      font-size: $L-Body-size;
+      font-weight: $BOLDEST-weight;
+    }
+
+    img {
+      margin-top: 20px;
+    }
+  }
+}

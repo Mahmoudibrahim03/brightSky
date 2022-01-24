@@ -1,0 +1,74 @@
+//Title Fonts...✈
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+//Main paragraph Fonts...✈
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap'); //FONT-FAMILY...✈
+$TITLES-font: 'lato',
+sans-serif;
+$MAIN-font: 'lato',
+sans-serif;
+//Font-SIZES...✈
+//Refer to material.io font system type-scale
+//resources : https://material.io/design/typography/the-type-system.html#type-scale
+
+// Head font sizes
+$XXL-Head-size: 6rem;
+$XL-Head-size: 3.75rem;
+$L-Head-size: 3rem;
+$M-Head-size: 2.125rem;
+$S-Head-size: 1.5rem;
+$XS-Head-size: 1.25rem;
+
+// Font weight
+$BOLDEST-weight: 700;
+$MEDIUM-weight: 400;
+$SEMILIGHT-weight: 300;
+$LIGHT-weight: 100;
+
+// Subtitle font sizes
+$L-Subtitle-size: 1rem;
+$S-Subtitle-size: 0.875rem;
+
+// Body font sizes
+$L-Body-size: 1rem;
+$S-Body-size: 0.875rem;
+
+// Button font sizes
+$M-Button-size: 0.875rem;
+
+// Caption font sizes
+$M-Caption-size: 0.75rem;
+
+// Overline font sizes
+$M-Overline-size: 0.625rem;
+
+//Main-BG_COLORS...✈
+$PRIMARY-Blue-color: #0068ff;
+$PRIMARY-Blue-Lv1-color: #0265f4;
+$PRIMARY-Blue-Lv2-color: #0250de;
+
+$SUCCESS-Green-color: #2ed775;
+$Warning-Yellow-color: #ffd035;
+$Warning-Red-color: #ff5353;
+$Natural-Grey-color: #596d86;
+
+$Base-White-color: #ffffff;
+$Base-White-Lv1-color: #f1f3f7;
+$Base-White-Lv2-color: #e6eaf1;
+
+//Text colors ..
+$DARK-Color: #263446;
+$LIGHT-Color: #6c7e95;
+
+
+//BORDER-RADIUS ...✈
+//$DEFAULT-radius: 5px;
+$FULL-radius: 50%;
+
+//BOX-SHADOWS ..
+$MAIN-shadow: -2px 2px 1px;
+
+//TRANSITION
+$MAIN-transition: all 0.14s ease-in-out;
+
+//Border
+$MAIN-border: 1px solid #333;
