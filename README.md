@@ -1,4 +1,7 @@
 # SkyBirds
+this project is just demo project wih no UI just integrated json local and not with reactive validation (custom validation)
+* Angular
+* Bootstrap
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
